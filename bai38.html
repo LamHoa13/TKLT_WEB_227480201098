@@ -1,84 +1,107 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu đa cấp</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .menu {
-            background-color: black;
-            color: white;
-            display: flex;
-            padding: 10px;
-        }
-        .menu-item {
-            position: relative;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .submenu, .sub-submenu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: gray;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            width: 200px;
-        }
-        .submenu li, .sub-submenu li {
-            padding: 10px;
-            color: white;
-            cursor: pointer;
-        }
-        .submenu li:hover, .sub-submenu li:hover {
-            background-color: darkgray;
-        }
-        .submenu .sub-submenu {
-            left: 100%;
-            top: 0;
-        }
-    </style>
-</head>
-<body>
-    <nav class="menu">
-        <div class="menu-item">Trang chủ</div>
-        <div class="menu-item">Giới thiệu</div>
-        <div class="menu-item" onclick="toggleMenu('submenu-khoahoc')">Khóa học ▼
-            <ul id="submenu-khoahoc" class="submenu">
-                <li onclick="toggleMenu('submenu-tinhoc')">Tin học căn bản ▶
-                    <ul id="submenu-tinhoc" class="sub-submenu">
-                        <li onclick="toggleMenu('submenu-word')">Tin học văn bản ▶
-                            <ul id="submenu-word" class="sub-submenu">
-                                <li>Microsoft PowerPoint 2010</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>Tin học phổ thông</li>
-                <li>Lập trình Pascal</li>
-                <li>Lập trình C</li>
-                <li>Thiết kế website</li>
-                <li>Vẽ kỹ thuật AutoCAD</li>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bài 3.8</title>
+        <style>
+            * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    
+    .menu {
+        display: flex;
+        list-style: none;
+        background: rgb(12, 12, 12);
+    }
+    
+    .menu li {
+        position: relative;
+        font-weight: bold;
+        padding: 10px;
+        border: 1px solid rgb(23, 24, 23);
+    }
+    
+    .menu a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px;
+    }
+    
+    .menu li:hover {
+        background-color: rgb(7, 7, 7);
+    }
+    .submenu
+    {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgb(13, 14, 13);
+        border: 1px solid #ccc;
+        z-index: 100;
+    }
+    .menu li:hover .submenu {
+        display: block;
+    }
+    .submenu ul,
+    .sub {
+        list-style: none;
+    }
+    
+    .submenu a,
+    .sub a {
+        display: block;
+        padding: 10px 20px;
+        width: 230px;
+        color: white;
+    }
+    
+    .sub {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background: rgb(12, 12, 12);
+        border: 1px solid #ccc;
+        z-index: 100;
+    }
+    
+    .submenu li:hover .sub {
+        display: block;
+    }
+        </style>
+    </head>
+    <body>
+    <ul class="menu">
+        <li><a href="">Trang Chủ</a></li>
+        <li><a href="">Giới Thiệu</a></li>
+        <li>
+        <a href="">Khoá Học</a>
+        <div class="submenu">
+            <ul>
+            <li>
+                <a href="">Tin học căn bản</a>
+                <ul class="sub">
+                <li><a href="">Microsoft Word 2010</a></li>
+                <li><a href="">Microsoft Excel 2010</a></li>
+                <li><a href="">Microsoft Powerpoint 2010</a></li>
+                </ul>
+            </li>
+            <li><a href="">Tin học phổ thông</a></li>
+            <li><a href="">Lập trình Pascal</a></li>
+            <li><a href="">Lập trình C</a></li>
+            <li><a href="">Thiết kế Website</a></li>
+            <li><a href="">Vẽ kỹ thuật AutoCAD</a></li>
             </ul>
         </div>
-        <div class="menu-item">Bài viết</div>
-        <div class="menu-item">Thủ thuật</div>
-    </nav>
-
-    <script>
-        function toggleMenu(id) {
-            var menu = document.getElementById(id);
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
-    </script>
-</body>
-</html>
+        </li>
+        <li><a href="">Bài Viết</a></li>
+        <li><a href="">Thủ Thuật</a></li>
+    </ul>    
+    </body>
+    </html>
