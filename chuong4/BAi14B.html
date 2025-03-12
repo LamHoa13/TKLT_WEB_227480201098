@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 13A</title>
+</head>
+<body>
+    <h2>Hãy nhập hai số và click vào nút tính tổng</h2>
+    <p>So hang 1: </p><input type="text" name="SoHang1" id="SoHang1">
+    <p>So hang 2: </p><input type="text" name="SoHang2" id="SoHang2">
+    <p>Ket Qua: </p><input type="text" name="KetQua" id="KetQua">
+    <input type="radio" name="operation" value="tổng" id="Tổng"
+    onclick="Tinhtong()">
+    <label for="Tổng">Cộng</label>
+    <input type="radio" name="operation" value="hiệu" id="Hiệu"
+    onclick="Tinhhieu()">
+    <label for="Hiệu">Trừ</label>
+    <input type="radio" name="operation" value="nhân" id="Nhân"
+    onclick="Tinhnhan()">
+    <label for="Nhân">Nhân</label>
+    <input type="radio" name="operation" value="chia" id="Chia"
+    onclick="Tinhchia()">
+    <label for="Chia">Chia</label>
+    <SCript>
+        function Tinhtong(){
+            let so1 = parseFloat(document.getElementsByName("SoHang1")[0].value);
+            let so2 = parseFloat(document.getElementsByName("SoHang2")[0].value);
+            let tong = so1 + so2;
+            document.getElementsByName("KetQua")[0].value = tong;
+        }
+        function Tinhhieu(){
+            let so1 = parseFloat(document.getElementsByName("SoHang1")[0].value);
+            let so2 = parseFloat(document.getElementsByName("SoHang2")[0].value);
+            let hieu = so1 - so2;
+            document.getElementsByName("KetQua")[0].value = hieu;
+        }
+        function Tinhnhan(){
+            let so1 = parseFloat(document.getElementsByName("SoHang1")[0].value);
+            let so2 = parseFloat(document.getElementsByName("SoHang2")[0].value);
+            let nhan = so1 * so2;
+            document.getElementsByName("KetQua")[0].value = nhan;
+        }
+        function Tinhchia(){
+            let so1 = parseFloat(document.getElementsByName("SoHang1")[0].value);
+            let so2 = parseFloat(document.getElementsByName("SoHang2")[0].value);
+            let chia = so1 / so2;
+            document.getElementsByName("KetQua")[0].value = chia;
+        }
+    </SCript>
+</body>
+</html>

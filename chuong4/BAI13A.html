@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 13A</title>
+</head>
+<body>
+    <h2>Hãy nhập hai số và click vào nút tính tổng</h2>
+    <p>So hang 1: </p><input type="text" name="SoHang1" id="SoHang1">
+    <p>So hang 2: </p><input type="text" name="SoHang2" id="SoHang2">
+    <p>Ket Qua: </p><input type="text" name="KetQua" id="KetQua">
+    <input type="button" value="Tính tổng"
+    onclick="Tinhtong()">
+    <SCript>
+        function Tinhtong(){
+            let so1 = parseFloat(document.getElementsByName("SoHang1")[0].value);
+            let so2 = parseFloat(document.getElementsByName("SoHang2")[0].value);
+            let tong = so1 + so2;
+            document.getElementsByName("KetQua")[0].value = tong;
+        }
+    </SCript>
+</body>
+</html>
