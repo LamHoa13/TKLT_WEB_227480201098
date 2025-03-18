@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 18A</title>
+    <script>
+        function Kiemtra(){
+            let noidung = document.getElementById("NoiDung");
+            let sokytu = document.getElementById("SoKyTu");
+            sokytu.value = noidung.value.length;
+            if(noidung.value.length > 200){
+                alert("Bạn đã gõ quá số ký tự cho phép!");
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial">
+    <h2>Nhập nội dung</h2>
+    <textarea id="NoiDung" cols="50" rows="10" onkeyup="Kiemtra()"></textarea><br>
+    Số ký tự đã gõ: <input type="text" id="SoKyTu" readonly>  
+</body>
+</html>
